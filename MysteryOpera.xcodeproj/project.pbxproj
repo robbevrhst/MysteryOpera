@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		590B0EB522AEBEA20058798C /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590B0EB422AEBEA20058798C /* StartGameViewController.swift */; };
 		59B574B522AD8B6900DC1BB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B574B422AD8B6900DC1BB4 /* AppDelegate.swift */; };
 		59B574B722AD8B6900DC1BB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B574B622AD8B6900DC1BB4 /* ViewController.swift */; };
 		59B574BA22AD8B6900DC1BB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59B574B822AD8B6900DC1BB4 /* Main.storyboard */; };
 		59B574BC22AD8B6900DC1BB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59B574BB22AD8B6900DC1BB4 /* Assets.xcassets */; };
 		59B574BF22AD8B6900DC1BB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59B574BD22AD8B6900DC1BB4 /* LaunchScreen.storyboard */; };
+		59C58C6122B065F400931884 /* VerdachtenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C58C6022B065F400931884 /* VerdachtenViewController.swift */; };
+		F10EF84DCAA394E0D6754BDF /* Pods_MysteryOpera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42390B512A1D331B0B2BFCBB /* Pods_MysteryOpera.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		42390B512A1D331B0B2BFCBB /* Pods_MysteryOpera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MysteryOpera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		590B0EB422AEBEA20058798C /* StartGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameViewController.swift; sourceTree = "<group>"; };
 		59B574B122AD8B6900DC1BB4 /* MysteryOpera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MysteryOpera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59B574B422AD8B6900DC1BB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59B574B622AD8B6900DC1BB4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +27,9 @@
 		59B574BB22AD8B6900DC1BB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59B574BE22AD8B6900DC1BB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		59B574C022AD8B6900DC1BB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59C58C6022B065F400931884 /* VerdachtenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerdachtenViewController.swift; sourceTree = "<group>"; };
+		85C8E60B57A340D9C5497BAD /* Pods-MysteryOpera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MysteryOpera.release.xcconfig"; path = "Target Support Files/Pods-MysteryOpera/Pods-MysteryOpera.release.xcconfig"; sourceTree = "<group>"; };
+		96AF1BE8CF44E7BD072FA919 /* Pods-MysteryOpera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MysteryOpera.debug.xcconfig"; path = "Target Support Files/Pods-MysteryOpera/Pods-MysteryOpera.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +37,64 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F10EF84DCAA394E0D6754BDF /* Pods_MysteryOpera.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A7C6623F8512CE1B872402C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42390B512A1D331B0B2BFCBB /* Pods_MysteryOpera.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		590B0EB022AEBE510058798C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				59B574B422AD8B6900DC1BB4 /* AppDelegate.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		590B0EB122AEBE550058798C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				59B574B822AD8B6900DC1BB4 /* Main.storyboard */,
+				59B574BB22AD8B6900DC1BB4 /* Assets.xcassets */,
+				59B574BD22AD8B6900DC1BB4 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		590B0EB222AEBE5B0058798C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				59B574B622AD8B6900DC1BB4 /* ViewController.swift */,
+				590B0EB422AEBEA20058798C /* StartGameViewController.swift */,
+				59C58C6022B065F400931884 /* VerdachtenViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		590B0EB322AEBE600058798C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				59B574C022AD8B6900DC1BB4 /* Info.plist */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
 		59B574A822AD8B6900DC1BB4 = {
 			isa = PBXGroup;
 			children = (
 				59B574B322AD8B6900DC1BB4 /* MysteryOpera */,
 				59B574B222AD8B6900DC1BB4 /* Products */,
+				A761AB26F35CADC4E43A797D /* Pods */,
+				0A7C6623F8512CE1B872402C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +109,21 @@
 		59B574B322AD8B6900DC1BB4 /* MysteryOpera */ = {
 			isa = PBXGroup;
 			children = (
-				59B574B422AD8B6900DC1BB4 /* AppDelegate.swift */,
-				59B574B622AD8B6900DC1BB4 /* ViewController.swift */,
-				59B574B822AD8B6900DC1BB4 /* Main.storyboard */,
-				59B574BB22AD8B6900DC1BB4 /* Assets.xcassets */,
-				59B574BD22AD8B6900DC1BB4 /* LaunchScreen.storyboard */,
-				59B574C022AD8B6900DC1BB4 /* Info.plist */,
+				590B0EB322AEBE600058798C /* Support Files */,
+				590B0EB222AEBE5B0058798C /* Controller */,
+				590B0EB122AEBE550058798C /* View */,
+				590B0EB022AEBE510058798C /* Model */,
 			);
 			path = MysteryOpera;
+			sourceTree = "<group>";
+		};
+		A761AB26F35CADC4E43A797D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				96AF1BE8CF44E7BD072FA919 /* Pods-MysteryOpera.debug.xcconfig */,
+				85C8E60B57A340D9C5497BAD /* Pods-MysteryOpera.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +133,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 59B574C322AD8B6900DC1BB4 /* Build configuration list for PBXNativeTarget "MysteryOpera" */;
 			buildPhases = (
+				0D78D8E69A874EA8E237CCC0 /* [CP] Check Pods Manifest.lock */,
 				59B574AD22AD8B6900DC1BB4 /* Sources */,
 				59B574AE22AD8B6900DC1BB4 /* Frameworks */,
 				59B574AF22AD8B6900DC1BB4 /* Resources */,
+				8CE15B761CAE4B1C32C92FF3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,13 +194,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0D78D8E69A874EA8E237CCC0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MysteryOpera-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8CE15B761CAE4B1C32C92FF3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MysteryOpera/Pods-MysteryOpera-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/iCarousel/iCarousel.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iCarousel.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MysteryOpera/Pods-MysteryOpera-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		59B574AD22AD8B6900DC1BB4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59C58C6122B065F400931884 /* VerdachtenViewController.swift in Sources */,
 				59B574B722AD8B6900DC1BB4 /* ViewController.swift in Sources */,
 				59B574B522AD8B6900DC1BB4 /* AppDelegate.swift in Sources */,
+				590B0EB522AEBEA20058798C /* StartGameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,11 +393,12 @@
 		};
 		59B574C422AD8B6900DC1BB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96AF1BE8CF44E7BD072FA919 /* Pods-MysteryOpera.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 96WFXG94ZL;
-				INFOPLIST_FILE = MysteryOpera/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MysteryOpera/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -292,17 +406,18 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.robbeverhoest.MysteryOpera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
 		59B574C522AD8B6900DC1BB4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85C8E60B57A340D9C5497BAD /* Pods-MysteryOpera.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 96WFXG94ZL;
-				INFOPLIST_FILE = MysteryOpera/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MysteryOpera/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +425,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.robbeverhoest.MysteryOpera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
