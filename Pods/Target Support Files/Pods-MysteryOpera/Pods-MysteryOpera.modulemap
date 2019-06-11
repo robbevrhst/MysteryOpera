@@ -1,0 +1,6 @@
+framework module Pods_MysteryOpera {
+  umbrella header "Pods-MysteryOpera-umbrella.h"
+
+  export *
+  module * { export * }
+}
