@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var playerOneLabel: UITextField!
     @IBOutlet weak var addButton1: UIButton!
     @IBOutlet weak var playerTwoLabel: UILabel!
     @IBOutlet weak var playerTwoTextField: UITextField!
@@ -50,6 +51,15 @@ class ViewController: UIViewController {
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
+        }
+    }
+    
+    @IBAction func nextPressed(_ sender: UIButton) {
+        if playerOneLabel.text?.isEmpty ?? true {
+            print("textField is empty")
+        } else {
+            print("textField has some text")
+            performSegue(withIdentifier: "goToCharacterSelect", sender: self)
         }
     }
 }

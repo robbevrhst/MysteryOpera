@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		590B0EB522AEBEA20058798C /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590B0EB422AEBEA20058798C /* StartGameViewController.swift */; };
+		596AF0DE22B1017200BA6524 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596AF0DD22B1017200BA6524 /* CharacterViewController.swift */; };
+		596AF0E022B10FD900BA6524 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596AF0DF22B10FD900BA6524 /* MapViewController.swift */; };
 		59B574B522AD8B6900DC1BB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B574B422AD8B6900DC1BB4 /* AppDelegate.swift */; };
 		59B574B722AD8B6900DC1BB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B574B622AD8B6900DC1BB4 /* ViewController.swift */; };
 		59B574BA22AD8B6900DC1BB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59B574B822AD8B6900DC1BB4 /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 /* Begin PBXFileReference section */
 		42390B512A1D331B0B2BFCBB /* Pods_MysteryOpera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MysteryOpera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		590B0EB422AEBEA20058798C /* StartGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameViewController.swift; sourceTree = "<group>"; };
+		596AF0DD22B1017200BA6524 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
+		596AF0DF22B10FD900BA6524 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		59B574B122AD8B6900DC1BB4 /* MysteryOpera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MysteryOpera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59B574B422AD8B6900DC1BB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59B574B622AD8B6900DC1BB4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +80,8 @@
 				59B574B622AD8B6900DC1BB4 /* ViewController.swift */,
 				590B0EB422AEBEA20058798C /* StartGameViewController.swift */,
 				59C58C6022B065F400931884 /* VerdachtenViewController.swift */,
+				596AF0DD22B1017200BA6524 /* CharacterViewController.swift */,
+				596AF0DF22B10FD900BA6524 /* MapViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -247,6 +253,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				59C58C6122B065F400931884 /* VerdachtenViewController.swift in Sources */,
+				596AF0E022B10FD900BA6524 /* MapViewController.swift in Sources */,
+				596AF0DE22B1017200BA6524 /* CharacterViewController.swift in Sources */,
 				59B574B722AD8B6900DC1BB4 /* ViewController.swift in Sources */,
 				59B574B522AD8B6900DC1BB4 /* AppDelegate.swift in Sources */,
 				590B0EB522AEBEA20058798C /* StartGameViewController.swift in Sources */,

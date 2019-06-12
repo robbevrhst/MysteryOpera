@@ -29,7 +29,7 @@
                                 <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Kies een personage"/>
                                 <connections>
-                                    <segue destination="EX4-f1-3OC" kind="show" animates="NO" id="i0t-Z5-Nlo"/>
+                                    <action selector="nextPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="10H-g3-tmg"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gg7-xN-GkU">
@@ -137,24 +137,191 @@
                         <outlet property="addButton1" destination="zDV-qs-JLH" id="rB0-r4-9LQ"/>
                         <outlet property="addButton2" destination="hrr-5S-7P1" id="Kh9-cF-Nci"/>
                         <outlet property="nextButton" destination="cGe-ma-mo7" id="kOl-nT-Fq9"/>
+                        <outlet property="playerOneLabel" destination="sZq-RJ-rDz" id="eVs-ze-e64"/>
                         <outlet property="playerThreeLabel" destination="xAD-OX-eZd" id="CCU-1P-ydK"/>
                         <outlet property="playerThreeTextField" destination="fov-0d-kZT" id="5z2-Jv-ppU"/>
                         <outlet property="playerTwoLabel" destination="yQe-4g-gs2" id="TLz-XH-17s"/>
                         <outlet property="playerTwoTextField" destination="DS4-aY-DZC" id="hJx-Ua-umx"/>
+                        <segue destination="EX4-f1-3OC" kind="show" identifier="goToCharacterSelect" animates="NO" id="dHR-BX-PkS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138.79941434846265" y="133.59375"/>
         </scene>
-        <!--View Controller-->
+        <!--Character View Controller-->
         <scene sceneID="wL9-xz-H1j">
             <objects>
-                <viewController id="EX4-f1-3OC" sceneMemberID="viewController">
+                <viewController id="EX4-f1-3OC" customClass="CharacterViewController" customModule="MysteryOpera" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hKc-Qx-D6L">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcV-LJ-ZWx">
+                                <rect key="frame" x="0.0" y="10" width="1024" height="748"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uqb-sZ-rfN">
+                                        <rect key="frame" x="458" y="0.0" width="566" height="748"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="72" translatesAutoresizingMaskIntoConstraints="NO" id="sLv-vw-9gG">
+                                                <rect key="frame" x="31" y="122" width="504" height="504"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="72" translatesAutoresizingMaskIntoConstraints="NO" id="byf-mB-TQL">
+                                                        <rect key="frame" x="0.0" y="0.0" width="504" height="120"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAf-Dy-fNi">
+                                                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="120" id="3dD-De-u0q"/>
+                                                                    <constraint firstAttribute="height" constant="120" id="K1t-SS-6k1"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button" image="personage1"/>
+                                                                <connections>
+                                                                    <action selector="characterOnePressed:" destination="EX4-f1-3OC" eventType="touchUpInside" id="8kF-LA-3hw"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jc3-Yy-JYM">
+                                                                <rect key="frame" x="192" y="0.0" width="120" height="120"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="120" id="aks-lx-V4q"/>
+                                                                    <constraint firstAttribute="height" constant="120" id="zWS-NG-iDK"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button" image="personage2"/>
+                                                                <connections>
+                                                                    <action selector="charTwoPressed:" destination="EX4-f1-3OC" eventType="touchUpInside" id="uwh-he-qx5"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ybf-55-gGJ">
+                                                                <rect key="frame" x="384" y="0.0" width="120" height="120"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="120" id="AoQ-rH-blx"/>
+                                                                    <constraint firstAttribute="width" constant="120" id="hy4-0D-7Q1"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button" image="personage3"/>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="72" translatesAutoresizingMaskIntoConstraints="NO" id="fVA-Vq-yzX">
+                                                        <rect key="frame" x="0.0" y="192" width="504" height="120"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n31-dh-AME">
+                                                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="120" id="1cT-zV-NDS"/>
+                                                                    <constraint firstAttribute="width" constant="120" id="Yae-ka-iQ3"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button" image="personage4"/>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUI-FA-RDo">
+                                                                <rect key="frame" x="192" y="0.0" width="120" height="120"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="120" id="7AZ-sY-9x7"/>
+                                                                    <constraint firstAttribute="height" constant="120" id="AzR-7h-HqG"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button" image="personage5"/>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKi-XN-Cbc">
+                                                                <rect key="frame" x="384" y="0.0" width="120" height="120"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="120" id="qhE-EC-Jtg"/>
+                                                                    <constraint firstAttribute="width" constant="120" id="rGT-gZ-JTE"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button" image="personage6"/>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="72" translatesAutoresizingMaskIntoConstraints="NO" id="7Zd-wz-wfB">
+                                                        <rect key="frame" x="0.0" y="384" width="504" height="120"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwN-gW-lNr">
+                                                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="120" id="Rb0-eV-NNA"/>
+                                                                    <constraint firstAttribute="height" constant="120" id="lkH-ya-uoC"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button" image="personage7"/>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvf-T9-eMG">
+                                                                <rect key="frame" x="192" y="0.0" width="120" height="120"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="120" id="eKM-QP-CuM"/>
+                                                                    <constraint firstAttribute="width" constant="120" id="gWQ-Pw-1AE"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button" image="personage8"/>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSN-ng-iRt">
+                                                                <rect key="frame" x="384" y="0.0" width="120" height="120"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="120" id="kbe-1W-ls7"/>
+                                                                    <constraint firstAttribute="height" constant="120" id="nFN-Rd-e5H"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button" image="personage1"/>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="504" id="10o-KS-ZET"/>
+                                                    <constraint firstAttribute="width" constant="504" id="HV3-HS-i4I"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="566" id="EOW-mB-li0"/>
+                                            <constraint firstItem="sLv-vw-9gG" firstAttribute="centerY" secondItem="Uqb-sZ-rfN" secondAttribute="centerY" id="W7m-qd-XaZ"/>
+                                            <constraint firstItem="sLv-vw-9gG" firstAttribute="centerX" secondItem="Uqb-sZ-rfN" secondAttribute="centerX" id="Z9b-hu-aXI"/>
+                                            <constraint firstAttribute="height" constant="748" id="kLe-XG-Fr7"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2GP-Zu-tFG">
+                                        <rect key="frame" x="0.0" y="0.0" width="417" height="698"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oRx-5m-7lC">
+                                                <rect key="frame" x="31" y="125" width="366" height="495"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AKo-WN-R9W">
+                                                        <rect key="frame" x="33" y="74" width="300" height="300"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEI-XF-s36">
+                                                        <rect key="frame" x="33" y="34" width="300" height="32"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOT-pb-fG5">
+                                                        <rect key="frame" x="8" y="378" width="358" height="87"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="417" id="TwL-Gu-X70"/>
+                                            <constraint firstAttribute="height" constant="698" id="vcV-WI-wbE"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1024" id="CUY-GC-ORz"/>
+                                    <constraint firstAttribute="bottom" secondItem="Uqb-sZ-rfN" secondAttribute="bottom" id="FOi-06-g9S"/>
+                                    <constraint firstAttribute="bottom" secondItem="2GP-Zu-tFG" secondAttribute="bottom" id="GG4-ns-xjV"/>
+                                    <constraint firstItem="2GP-Zu-tFG" firstAttribute="top" secondItem="gcV-LJ-ZWx" secondAttribute="top" id="I3g-Xz-nXi"/>
+                                    <constraint firstItem="2GP-Zu-tFG" firstAttribute="leading" secondItem="gcV-LJ-ZWx" secondAttribute="leading" id="QfV-PG-0SS"/>
+                                    <constraint firstAttribute="trailing" secondItem="Uqb-sZ-rfN" secondAttribute="trailing" id="eAi-qv-78K"/>
+                                    <constraint firstAttribute="height" constant="748" id="mMX-Ma-vfY"/>
+                                    <constraint firstItem="Uqb-sZ-rfN" firstAttribute="top" secondItem="gcV-LJ-ZWx" secondAttribute="top" id="u3I-7k-b2b"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kies uw personage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8M-FU-Na9">
                                 <rect key="frame" x="436.5" y="56" width="151" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
@@ -171,107 +338,10 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Kies een personage"/>
+                                <connections>
+                                    <action selector="nextPressed:" destination="EX4-f1-3OC" eventType="touchUpInside" id="AJW-xv-3kW"/>
+                                </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uqb-sZ-rfN">
-                                <rect key="frame" x="484" y="103" width="520" height="520"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="72" translatesAutoresizingMaskIntoConstraints="NO" id="sLv-vw-9gG">
-                                        <rect key="frame" x="8" y="8" width="504" height="504"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="72" translatesAutoresizingMaskIntoConstraints="NO" id="byf-mB-TQL">
-                                                <rect key="frame" x="0.0" y="0.0" width="504" height="120"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAf-Dy-fNi">
-                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="120" id="3dD-De-u0q"/>
-                                                            <constraint firstAttribute="height" constant="120" id="K1t-SS-6k1"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button" image="personage1"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jc3-Yy-JYM">
-                                                        <rect key="frame" x="192" y="0.0" width="120" height="120"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="120" id="aks-lx-V4q"/>
-                                                            <constraint firstAttribute="height" constant="120" id="zWS-NG-iDK"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button" image="personage2"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ybf-55-gGJ">
-                                                        <rect key="frame" x="384" y="0.0" width="120" height="120"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="120" id="AoQ-rH-blx"/>
-                                                            <constraint firstAttribute="width" constant="120" id="hy4-0D-7Q1"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button" image="personage3"/>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="72" translatesAutoresizingMaskIntoConstraints="NO" id="fVA-Vq-yzX">
-                                                <rect key="frame" x="0.0" y="192" width="504" height="120"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n31-dh-AME">
-                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="120" id="1cT-zV-NDS"/>
-                                                            <constraint firstAttribute="width" constant="120" id="Yae-ka-iQ3"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button" image="personage4"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUI-FA-RDo">
-                                                        <rect key="frame" x="192" y="0.0" width="120" height="120"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="120" id="7AZ-sY-9x7"/>
-                                                            <constraint firstAttribute="height" constant="120" id="AzR-7h-HqG"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button" image="personage5"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKi-XN-Cbc">
-                                                        <rect key="frame" x="384" y="0.0" width="120" height="120"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="120" id="qhE-EC-Jtg"/>
-                                                            <constraint firstAttribute="width" constant="120" id="rGT-gZ-JTE"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button" image="personage6"/>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="72" translatesAutoresizingMaskIntoConstraints="NO" id="7Zd-wz-wfB">
-                                                <rect key="frame" x="0.0" y="384" width="504" height="120"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwN-gW-lNr">
-                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="120" id="Rb0-eV-NNA"/>
-                                                            <constraint firstAttribute="height" constant="120" id="lkH-ya-uoC"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button" image="personage7"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvf-T9-eMG">
-                                                        <rect key="frame" x="192" y="0.0" width="120" height="120"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="120" id="eKM-QP-CuM"/>
-                                                            <constraint firstAttribute="width" constant="120" id="gWQ-Pw-1AE"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button" image="personage8"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSN-ng-iRt">
-                                                        <rect key="frame" x="384" y="0.0" width="120" height="120"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="120" id="kbe-1W-ls7"/>
-                                                            <constraint firstAttribute="height" constant="120" id="nFN-Rd-e5H"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button" image="personage1"/>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -279,10 +349,19 @@
                             <constraint firstItem="q8M-FU-Na9" firstAttribute="top" secondItem="wFv-eY-nhp" secondAttribute="top" constant="36" id="Omp-Ir-wdA"/>
                             <constraint firstItem="wFv-eY-nhp" firstAttribute="trailing" secondItem="Qv2-p2-8fY" secondAttribute="trailing" constant="50" id="PG9-oP-A2H"/>
                             <constraint firstItem="wFv-eY-nhp" firstAttribute="bottom" secondItem="Qv2-p2-8fY" secondAttribute="bottom" constant="40" id="gmV-fQ-afF"/>
+                            <constraint firstItem="gcV-LJ-ZWx" firstAttribute="centerX" secondItem="hKc-Qx-D6L" secondAttribute="centerX" id="hdc-J0-bcJ"/>
+                            <constraint firstItem="gcV-LJ-ZWx" firstAttribute="centerY" secondItem="hKc-Qx-D6L" secondAttribute="centerY" id="r20-8k-L8F"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wFv-eY-nhp"/>
                     </view>
                     <navigationItem key="navigationItem" id="FKU-Ae-X79"/>
+                    <connections>
+                        <outlet property="nextButton" destination="Qv2-p2-8fY" id="gQl-c5-PAD"/>
+                        <outlet property="selectedChar" destination="AKo-WN-R9W" id="Kuq-2U-SJn"/>
+                        <outlet property="selectedName" destination="hEI-XF-s36" id="04v-1o-qrT"/>
+                        <outlet property="selectedVoordeel" destination="tOT-pb-fG5" id="zlA-2v-6Me"/>
+                        <segue destination="7XE-xn-xts" kind="show" identifier="goToInvitation" id="DkF-0H-MqX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rj1-w0-hFu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -304,10 +383,31 @@
                                 <rect key="frame" x="0.0" y="190" width="297" height="578"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODA-7w-cow">
+                                <rect key="frame" x="730" y="666" width="244" height="62"/>
+                                <color key="backgroundColor" red="0.36862745099999999" green="0.30588235289999999" blue="0.27058823529999998" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="1aZ-Qe-DJH"/>
+                                    <constraint firstAttribute="width" constant="244" id="t7E-RW-uUv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Kies een personage"/>
+                                <connections>
+                                    <action selector="nextPressed:" destination="EX4-f1-3OC" eventType="touchUpInside" id="kZr-MO-iGX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mw6-zJ-pws" firstAttribute="trailing" secondItem="ODA-7w-cow" secondAttribute="trailing" constant="50" id="0fF-wG-0cm"/>
+                            <constraint firstItem="mw6-zJ-pws" firstAttribute="bottom" secondItem="ODA-7w-cow" secondAttribute="bottom" constant="40" id="2We-Gs-12w"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mw6-zJ-pws"/>
                     </view>
+                    <connections>
+                        <segue destination="ssA-z5-Qtt" kind="show" identifier="goToOnboarding" id="rkU-2Q-xMw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ur5-KK-Bs9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -371,7 +471,6 @@
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <action selector="startGamePressed:" destination="ssA-z5-Qtt" eventType="touchUpInside" id="1fA-s3-795"/>
-                                    <segue destination="7XE-xn-xts" kind="show" animates="NO" id="YUO-Yq-LyO"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Koning Riccardo is vermoord!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHD-MZ-sG6">
@@ -411,18 +510,48 @@
         <!--Plattegrond-->
         <scene sceneID="Day-7K-Z9a">
             <objects>
-                <viewController id="7FI-eP-7vo" sceneMemberID="viewController">
+                <viewController id="7FI-eP-7vo" customClass="MapViewController" customModule="MysteryOpera" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mbs-hM-U2n">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcq-5v-so7">
+                                <rect key="frame" x="874" y="70" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="28e-zF-VB1"/>
+                                    <constraint firstAttribute="height" constant="100" id="dUH-s8-sSg"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="personage1"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMo-79-3lf">
+                                <rect key="frame" x="874" y="593" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="frb-YO-r2m"/>
+                                    <constraint firstAttribute="height" constant="100" id="rQC-VJ-ev7"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="qrButton"/>
+                                <connections>
+                                    <action selector="QRPressed:" destination="7FI-eP-7vo" eventType="touchUpInside" id="cOS-sE-6XR"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="z0l-J3-n5W" firstAttribute="bottom" secondItem="VMo-79-3lf" secondAttribute="bottom" constant="25" id="25A-eR-Nsq"/>
+                            <constraint firstItem="bcq-5v-so7" firstAttribute="top" secondItem="z0l-J3-n5W" secondAttribute="top" constant="50" id="4bJ-OA-YdX"/>
+                            <constraint firstItem="z0l-J3-n5W" firstAttribute="trailing" secondItem="VMo-79-3lf" secondAttribute="trailing" constant="50" id="CYm-mL-LYz"/>
+                            <constraint firstItem="z0l-J3-n5W" firstAttribute="trailing" secondItem="bcq-5v-so7" secondAttribute="trailing" constant="50" id="Cjb-Fw-LDs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="z0l-J3-n5W"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Plattegrond" id="OyR-Fm-f1k"/>
+                    <connections>
+                        <outlet property="profileButton" destination="bcq-5v-so7" id="fFq-yM-Tit"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lzS-ah-ug1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3858" y="134"/>
+            <point key="canvasLocation" x="3857.8124999999995" y="133.59375"/>
         </scene>
         <!--Verdachten-->
         <scene sceneID="sMi-fK-NpG">
@@ -450,7 +579,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="TPU-i2-GOR"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Aanwijzingen" id="Qvm-jQ-fFF"/>
+                    <tabBarItem key="tabBarItem" title="Aanwijzingen" image="plus" selectedImage="plus" id="Qvm-jQ-fFF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mXt-XJ-KCt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -487,5 +616,6 @@
         <image name="personage7" width="260" height="260"/>
         <image name="personage8" width="260" height="260"/>
         <image name="plus" width="83" height="83"/>
+        <image name="qrButton" width="99" height="99"/>
     </resources>
 </document>
