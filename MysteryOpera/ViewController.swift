@@ -16,14 +16,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var addButton2: UIButton!
     @IBOutlet weak var playerThreeLabel: UILabel!
     @IBOutlet weak var playerThreeTextField: UITextField!
+    @IBOutlet weak var nextButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        nextButton.layer.cornerRadius = 10
+        nextButton.clipsToBounds = true
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-        // change
     }
 
     @IBAction func addPlayerTwo(_ sender: UIButton) {
