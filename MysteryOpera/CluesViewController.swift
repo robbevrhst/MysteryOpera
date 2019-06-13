@@ -11,57 +11,73 @@ import AVFoundation
 
 class CluesViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
-    @IBOutlet weak var scanImage: UIImageView!
+    @IBOutlet weak var videoPreview: UIView!
+    @IBOutlet weak var clueImage: UIImageView!
     
-    var video = AVCaptureVideoPreviewLayer()
+    
+    enum error:Error {
+        case noCameraAvailable
+        case videoInputInitFail
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let session = AVCaptureSession()
-        guard let captureDevice = AVCaptureDevice.default(for: .video) else {
-            print("camera not available")
-            return
-        }
-        
         do {
-            let input = try AVCaptureDeviceInput(device: captureDevice)
-            session.addInput(input)
+            try scanQRCode()
         } catch {
-            print(error)
+            print("Failed to scan QR Code")
         }
-        
-        let output = AVCaptureMetadataOutput()
-        session.addOutput(output)
-        
-        output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-        output.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
-        
-        video = AVCaptureVideoPreviewLayer(session: session)
-        video.frame = view.layer.bounds                                     // size
-        view.layer.addSublayer(video)
-        
-        self.view.bringSubviewToFront(scanImage)
-        
-        session.startRunning()
     }
     
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
-        if metadataObjects != nil && metadataObjects.count != nil {
-            if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject {
-                if object.type == AVMetadataObject.ObjectType.qr {
-                    let alert = UIAlertController(title: "QR Code", message: object.stringValue, preferredStyle: .alert)
-                    
-                    alert.addAction(UIAlertAction(title: "Retake", style: .default, handler: nil))
-                    alert.addAction(UIAlertAction(title: "Copy", style: .default, handler: { (nil) in
-                        UIPasteboard.general.string = object.stringValue
-                    }))
-                    
+        if metadataObjects.count > 0 {
+            let macReadCode = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
+            if macReadCode.type == AVMetadataObject.ObjectType.qr {
+                print(macReadCode.stringValue!)
+                
+                if macReadCode.stringValue! == "Glas" {
+                    clueImage.image = UIImage(named: "personage1")
+                } else if macReadCode.stringValue! == "stof" {
+                    clueImage.image = UIImage(named: "personage2")
+                } else {
+                    let alert = UIAlertController(title: macReadCode.stringValue!, message: "", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    alert.addAction(action)
                     present(alert, animated: true, completion: nil)
                 }
             }
         }
     }
     
-    
+    func scanQRCode() throws {
+        let avCaptureSession = AVCaptureSession()
+        
+        guard let avCaptureDevice = AVCaptureDevice.default(for: AVMediaType.video) else {
+            print("no camera")
+            throw error.noCameraAvailable
+        }
+        
+        guard let avCaptureInput = try? AVCaptureDeviceInput(device: avCaptureDevice) else {
+            print("failed to init camera")
+            throw error.videoInputInitFail
+        }
+        
+        let avCaptureMetaDataOutput = AVCaptureMetadataOutput()
+        avCaptureMetaDataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+        
+        avCaptureSession.addInput(avCaptureInput)
+        avCaptureSession.addOutput(avCaptureMetaDataOutput)
+        
+        avCaptureMetaDataOutput.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
+        
+        let avCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: avCaptureSession)
+        avCaptureVideoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        avCaptureVideoPreviewLayer.frame = videoPreview.bounds
+        avCaptureVideoPreviewLayer.connection?.videoOrientation = .landscapeRight
+        self.videoPreview.layer.addSublayer(avCaptureVideoPreviewLayer)
+        
+        avCaptureSession.startRunning()
+    }
+
 }
