@@ -41,8 +41,8 @@ class CluesViewController: UIViewController, AVCaptureMetadataOutputObjectsDeleg
                 } else if macReadCode.stringValue! == "stof" {
                     clueImage.image = UIImage(named: "personage2")
                 } else {
-                    let alert = UIAlertController(title: macReadCode.stringValue!, message: "", preferredStyle: .alert)
-                    let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    let alert = UIAlertController(title: "Dit is geen aanwijzing!", message: "", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "Opnieuw", style: .default, handler: nil)
                     alert.addAction(action)
                     present(alert, animated: true, completion: nil)
                 }

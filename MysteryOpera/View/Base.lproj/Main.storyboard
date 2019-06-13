@@ -74,7 +74,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <segue destination="52r-3Z-fBh" kind="show" identifier="goToForm" animates="NO" id="6fj-xF-uH6"/>
+                        <segue destination="52r-3Z-fBh" kind="show" identifier="goToForm" animates="NO" id="8fH-Ni-dnC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -446,33 +446,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZSB-kV-oT7">
-                                <rect key="frame" x="305" y="95" width="415" height="578"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fgR-OO-lRx">
-                                <rect key="frame" x="0.0" y="190" width="297" height="578"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODA-7w-cow">
-                                <rect key="frame" x="730" y="666" width="244" height="62"/>
-                                <color key="backgroundColor" red="0.36862745099999999" green="0.30588235289999999" blue="0.27058823529999998" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="koning" translatesAutoresizingMaskIntoConstraints="NO" id="fgR-OO-lRx">
+                                <rect key="frame" x="20" y="248" width="331" height="500"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="62" id="1aZ-Qe-DJH"/>
-                                    <constraint firstAttribute="width" constant="244" id="t7E-RW-uUv"/>
+                                    <constraint firstAttribute="height" constant="500" id="9pu-jM-nNF"/>
+                                    <constraint firstAttribute="width" constant="331" id="gW9-nB-ztI"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Kies een personage"/>
-                                <connections>
-                                    <action selector="nextPressed:" destination="EX4-f1-3OC" eventType="touchUpInside" id="kZr-MO-iGX"/>
-                                </connections>
-                            </button>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brief" translatesAutoresizingMaskIntoConstraints="NO" id="ZSB-kV-oT7">
+                                <rect key="frame" x="311" y="18" width="600" height="600"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="2Pb-Rl-WR3"/>
+                                    <constraint firstAttribute="height" constant="600" id="EOB-eM-69j"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="24F-Ji-1dl">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b4X-E6-A0R">
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="b4X-E6-A0R" firstAttribute="leading" secondItem="24F-Ji-1dl" secondAttribute="leading" id="3ns-F4-Axa"/>
+                                    <constraint firstAttribute="trailing" secondItem="b4X-E6-A0R" secondAttribute="trailing" id="CgG-UR-hzh"/>
+                                    <constraint firstItem="b4X-E6-A0R" firstAttribute="top" secondItem="24F-Ji-1dl" secondAttribute="top" id="ksO-LQ-UO5"/>
+                                    <constraint firstAttribute="bottom" secondItem="b4X-E6-A0R" secondAttribute="bottom" id="r0O-ID-466"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="mw6-zJ-pws" firstAttribute="trailing" secondItem="ODA-7w-cow" secondAttribute="trailing" constant="50" id="0fF-wG-0cm"/>
-                            <constraint firstItem="mw6-zJ-pws" firstAttribute="bottom" secondItem="ODA-7w-cow" secondAttribute="bottom" constant="40" id="2We-Gs-12w"/>
+                            <constraint firstItem="24F-Ji-1dl" firstAttribute="trailing" secondItem="mw6-zJ-pws" secondAttribute="trailing" id="8kb-lY-sg6"/>
+                            <constraint firstItem="ZSB-kV-oT7" firstAttribute="leading" secondItem="fgR-OO-lRx" secondAttribute="trailing" constant="-40" id="KbU-2f-2RB"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="24F-Ji-1dl" secondAttribute="bottom" id="QY4-xe-0CW"/>
+                            <constraint firstItem="24F-Ji-1dl" firstAttribute="leading" secondItem="mw6-zJ-pws" secondAttribute="leading" id="Tpu-fZ-1nX"/>
+                            <constraint firstItem="mw6-zJ-pws" firstAttribute="bottom" secondItem="ZSB-kV-oT7" secondAttribute="bottom" constant="150" id="VQb-MZ-jlg"/>
+                            <constraint firstItem="mw6-zJ-pws" firstAttribute="bottom" secondItem="fgR-OO-lRx" secondAttribute="bottom" constant="20" id="eA3-Jt-Oqf"/>
+                            <constraint firstItem="24F-Ji-1dl" firstAttribute="top" secondItem="bOt-zk-GWJ" secondAttribute="top" id="fsY-YL-u8t"/>
+                            <constraint firstItem="fgR-OO-lRx" firstAttribute="leading" secondItem="mw6-zJ-pws" secondAttribute="leading" constant="20" id="kPU-3I-2XU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mw6-zJ-pws"/>
                     </view>
@@ -740,6 +753,8 @@
     <resources>
         <image name="bg-official" width="1024" height="768"/>
         <image name="bg-without-door" width="1024" height="768"/>
+        <image name="brief" width="600" height="598"/>
+        <image name="koning" width="94.333335876464844" height="162.33332824707031"/>
         <image name="logo" width="326" height="238"/>
         <image name="personage1" width="260" height="260"/>
         <image name="personage2" width="260" height="260"/>
