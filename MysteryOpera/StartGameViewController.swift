@@ -12,6 +12,7 @@ class StartGameViewController: UIViewController {
 
     @IBOutlet weak var secondsLabel: UILabel!
     @IBOutlet weak var minutesLabel: UILabel!
+    @IBOutlet weak var nextButton: UIButton!
     
     var seconds = 59
     var minutes = 59
@@ -19,6 +20,9 @@ class StartGameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        nextButton.layer.cornerRadius = 10
+        nextButton.clipsToBounds = true
     }
     
     @objc func action (){
@@ -38,6 +42,8 @@ class StartGameViewController: UIViewController {
     }
 
     @IBAction func startGamePressed(_ sender: UIButton) {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(StartGameViewController.action), userInfo: nil, repeats: true)
+//        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(StartGameViewController.action), userInfo: nil, repeats: true)
+        
+        performSegue(withIdentifier: "startGame", sender: self)
     }
 }
