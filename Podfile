@@ -6,5 +6,5 @@ target 'MysteryOpera' do
   use_frameworks!
 
   # Pods for MysteryOpera
-    pod 'iCarousel'
+    pod 'UPCarouselFlowLayout'
 end

@@ -7,30 +7,43 @@
 //
 
 import UIKit
-import iCarousel
+import UPCarouselFlowLayout
 
-class VerdachtenViewController: UIViewController, iCarouselDelegate, iCarouselDataSource {
-
-    @IBOutlet weak var carouselView: UIView!
+class VerdachtenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    var numbers = [Int]()
+    @IBOutlet weak var carouselCollectionView: UICollectionView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        numbers = [1,2,3,4,5,6]
+    carouselCollectionView.register(UINib.init(nibName: "CarouselCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "carouselIdentifier")
+        
+        let flowLayout = UPCarouselFlowLayout()
+        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.size.width - 200.0, height: carouselCollectionView.frame.size.height)
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.sideItemAlpha = 0.8
+        flowLayout.spacingMode = .fixed(spacing: 5.0)
+//        flowLayout.sideItemScale = 0.8
+        
+        carouselCollectionView.collectionViewLayout = flowLayout
+        
+        carouselCollectionView.delegate = self
+        carouselCollectionView.dataSource = self
     }
     
-    func numberOfItems(in carousel: iCarousel) -> Int {
-        return numbers.count
+    // MARK:- UICollectionView Delegate and Datasource
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 6
     }
     
-    func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
-        let tempView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = carouselCollectionView.dequeueReusableCell(withReuseIdentifier: "carouselIdentifier", for: indexPath) as! CarouselCollectionViewCell
         
-        tempView.backgroundColor = UIColor.blue
+        cell.nameLabel.text = "Personage \(indexPath.row + 1)"
+        cell.bioLabel.text = "Biografie van personage \(indexPath.row + 1)...lfmlsdkjfmlsqdf dsf dfm sdf qsfml jsdfl qsdjfkls djf dslkfj dlskf qsdjlf sdlkfj qsdlmkfj qsdlmf qsdmlf qsdmkf dsjflksd jfldsk fjsdkfsldkf jqslkfd jqksld fjksqldf jldsk fjsqdlkf."
         
-        return tempView
+        return cell
     }
     
 }

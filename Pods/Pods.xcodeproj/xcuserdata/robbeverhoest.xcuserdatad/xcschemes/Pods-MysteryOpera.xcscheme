@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1020"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C7DCEE91B086DF6AAFC954631086D0D6"
+               BlueprintIdentifier = "87D6CA3F4B6CCCBFCE306FB27DC5EC32"
                BuildableName = "Pods_MysteryOpera.framework"
                BlueprintName = "Pods-MysteryOpera"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C7DCEE91B086DF6AAFC954631086D0D6"
+            BlueprintIdentifier = "87D6CA3F4B6CCCBFCE306FB27DC5EC32"
             BuildableName = "Pods_MysteryOpera.framework"
             BlueprintName = "Pods-MysteryOpera"
             ReferencedContainer = "container:Pods.xcodeproj">
