@@ -8,4 +8,6 @@ target 'MysteryOpera' do
   # Pods for MysteryOpera
     pod 'UPCarouselFlowLayout'
     pod 'QRCodeReader.swift'
+    pod 'Alamofire'
+    pod 'SwiftyJSON'
 end

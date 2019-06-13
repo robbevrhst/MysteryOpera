@@ -1,20 +1,28 @@
 PODS:
+  - Alamofire (4.8.2)
   - QRCodeReader.swift (10.1.0)
+  - SwiftyJSON (5.0.0)
   - UPCarouselFlowLayout (1.1.2)
 
 DEPENDENCIES:
+  - Alamofire
   - QRCodeReader.swift
+  - SwiftyJSON
   - UPCarouselFlowLayout
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - QRCodeReader.swift
+    - SwiftyJSON
     - UPCarouselFlowLayout
 
 SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   QRCodeReader.swift: 373a389fe9a22d513c879a32a6f647c58f4ef572
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   UPCarouselFlowLayout: 4c7d2c43a10ebb1597bde502a53699d378341dad
 
-PODFILE CHECKSUM: 31256f9a58835538f040f188795932d9e41b0688
+PODFILE CHECKSUM: 251b2941b874238eca63d94564f4b371977ea0c2
 
 COCOAPODS: 1.6.1

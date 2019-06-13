@@ -8,15 +8,22 @@
 
 import UIKit
 import UPCarouselFlowLayout
+import Alamofire
+import SwiftyJSON
 
 class VerdachtenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var carouselCollectionView: UICollectionView!
     
+    let path:String = "http://www.thrillstudio.be/admin/index.php?page=detail&id=1&accept=json"
+    var characterItems = [CharacterItem]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    carouselCollectionView.register(UINib.init(nibName: "CarouselCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "carouselIdentifier")
+        
+        loadJSON()
+        
+        carouselCollectionView.register(UINib.init(nibName: "CarouselCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "carouselIdentifier")
         
         let flowLayout = UPCarouselFlowLayout()
         flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.size.width - 200.0, height: carouselCollectionView.frame.size.height)
@@ -31,10 +38,37 @@ class VerdachtenViewController: UIViewController, UICollectionViewDelegate, UICo
         carouselCollectionView.dataSource = self
     }
     
+    func loadJSON(){
+        request(path, method: .get).validate().responseJSON { (response) in
+            switch response.result{
+            case .success(let value):
+                let json = JSON(value);
+                self.parseJSON(json:json);
+            case .failure(let error):
+                print(error);
+            }
+        }
+    }
+    
+    func parseJSON(json:JSON){
+        for (_, subJSON) in json["data"]{
+            let item = subJSON["verdachten"]
+            let new = CharacterItem(name:item["name"].stringValue, text:item["text"].stringValue, motief:item["motief"].stringValue)
+            characterItems.append(new);
+        }
+    //        tableView.reloadData()
+        self.view.setNeedsLayout()
+        self.view.layoutIfNeeded()
+        print(characterItems.count)
+        print(characterItems)
+    }
+    
+    
     // MARK:- UICollectionView Delegate and Datasource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        print("number of items is \(characterItems.count)")
+        return characterItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
