@@ -18,12 +18,4 @@ class MapViewController: UIViewController {
         profileButton.layer.cornerRadius = 0.5 * profileButton.bounds.size.width
         profileButton.clipsToBounds = true
     }
-
-    @IBAction func QRPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "goToQRScanner", sender: self)
-    }
-    
- 
-    
-    
 }
