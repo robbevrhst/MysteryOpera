@@ -1,16 +1,16 @@
 PODS:
-  - iCarousel (1.8.3)
+  - UPCarouselFlowLayout (1.1.2)
 
 DEPENDENCIES:
-  - iCarousel
+  - UPCarouselFlowLayout
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - iCarousel
+    - UPCarouselFlowLayout
 
 SPEC CHECKSUMS:
-  iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
+  UPCarouselFlowLayout: 4c7d2c43a10ebb1597bde502a53699d378341dad
 
-PODFILE CHECKSUM: 1cfef13b84bdb16923cc3bf08b505034e410332f
+PODFILE CHECKSUM: 6e9ceb133cccd7e5b0cff35d5e8b4a5abbdec442
 
 COCOAPODS: 1.6.1
