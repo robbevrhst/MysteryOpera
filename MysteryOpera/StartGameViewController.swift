@@ -9,40 +9,67 @@
 import UIKit
 
 class StartGameViewController: UIViewController {
-
-    @IBOutlet weak var secondsLabel: UILabel!
-    @IBOutlet weak var minutesLabel: UILabel!
-    @IBOutlet weak var nextButton: UIButton!
     
-    var seconds = 59
-    var minutes = 59
-    var timer = Timer()
+    let date = Date()
+    let calendar = Calendar.current
+    
+    var startUur:Int = 0
+    var startMinuten:Int = 0
+    var startSeconden:Int = 0
+    
+    var currentUur:Int = 0
+    var currentMinuten:Int = 0
+    var currentSeconden:Int = 0
+
+    @IBOutlet weak var nextButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         nextButton.layer.cornerRadius = 10
         nextButton.clipsToBounds = true
+        
+        startUur = calendar.component(.hour, from: date)
+        startMinuten = calendar.component(.minute, from: date)
+        startSeconden = calendar.component(.second, from: date)
+        
+        print("START -- \(startUur) hours, \(startMinuten) minutes, \(startSeconden) seconds")
     }
     
-    @objc func action (){
-        if seconds <= 0 {
-            seconds = 60
-            minutes -= 1
-            minutesLabel.text = String(minutes)
-        }
     
-        if minutes <= 59 && seconds <= 58 {
-            minutesLabel.text = "time"
-            secondsLabel.text = "up"
-        } else {
-            seconds -= 1
-            secondsLabel.text = String(seconds)
-        }
-    }
 
     @IBAction func startGamePressed(_ sender: UIButton) {
-//        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(StartGameViewController.action), userInfo: nil, repeats: true)
+        let dateCurrent = Date()
+        let CalenderCurrent = Calendar.current
+        
+        currentUur = CalenderCurrent.component(.hour, from: dateCurrent)
+        currentMinuten = CalenderCurrent.component(.minute, from: dateCurrent)
+        currentSeconden = CalenderCurrent.component(.second, from: dateCurrent)
+        
+        print("CURRENT -- \(currentUur) hours, \(currentMinuten) minutes, \(currentSeconden) seconds")
+        
+        let endUur = startUur + 1
+        
+        print("END -- \(endUur) hours, \(startMinuten) minutes, \(startSeconden) seconds")
+        
+        var hoursRemaining = endUur - currentUur
+        var minutesRemaining = startMinuten - currentMinuten
+        var secondsRemaining = startSeconden - currentSeconden
+        
+        if hoursRemaining >= 1 && minutesRemaining <= 0 && secondsRemaining <= 0 {
+            hoursRemaining -= 1
+            minutesRemaining = 59
+            secondsRemaining = 59
+        } else if minutesRemaining >= 0 && secondsRemaining <= 0 {
+            minutesRemaining -= 1
+            secondsRemaining = 59
+        } else if minutesRemaining <= 0 && secondsRemaining <= 0 {
+            print("TIME IS UP")
+        } else {
+            print("SOMETHING WRONG LMAO")
+        }
+        
+        print("\(hoursRemaining) hours, \(minutesRemaining) minutes, \(secondsRemaining) seconds remaining...")
         
         performSegue(withIdentifier: "startGame", sender: self)
     }
