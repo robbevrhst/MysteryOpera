@@ -29,7 +29,7 @@ class VerdachtenViewController: UIViewController, UICollectionViewDelegate, UICo
         flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.size.width - 200.0, height: carouselCollectionView.frame.size.height)
         flowLayout.scrollDirection = .horizontal
         flowLayout.sideItemAlpha = 0.8
-        flowLayout.spacingMode = .fixed(spacing: 5.0)
+        flowLayout.spacingMode = .fixed(spacing: 40.0)
 //        flowLayout.sideItemScale = 0.8
         
         carouselCollectionView.collectionViewLayout = flowLayout
@@ -51,31 +51,31 @@ class VerdachtenViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func parseJSON(json:JSON){
-        for (_, subJSON) in json["data"]{
-            let item = subJSON["verdachten"]
-            let new = CharacterItem(name:item["name"].stringValue, text:item["text"].stringValue, motief:item["motief"].stringValue)
+        for (_, item) in json["data"][0]["verdachten"]{
+            let new = CharacterItem(name:item["name"].stringValue, text:item["text"].stringValue, motief:item["motief"].stringValue, vraag1:item["vraag_1"].stringValue, vraag2:item["vraag_2"].stringValue, vraag3:item["vraag_3"].stringValue)
             characterItems.append(new);
         }
-    //        tableView.reloadData()
-        self.view.setNeedsLayout()
-        self.view.layoutIfNeeded()
-        print(characterItems.count)
-        print(characterItems)
+        carouselCollectionView.reloadData()
+        print("done parsing")
     }
     
     
     // MARK:- UICollectionView Delegate and Datasource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("number of items is \(characterItems.count)")
         return characterItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = carouselCollectionView.dequeueReusableCell(withReuseIdentifier: "carouselIdentifier", for: indexPath) as! CarouselCollectionViewCell
         
-        cell.nameLabel.text = "Personage \(indexPath.row + 1)"
-        cell.bioLabel.text = "Biografie van personage \(indexPath.row + 1)...lfmlsdkjfmlsqdf dsf dfm sdf qsfml jsdfl qsdjfkls djf dslkfj dlskf qsdjlf sdlkfj qsdlmkfj qsdlmf qsdmlf qsdmkf dsjflksd jfldsk fjsdkfsldkf jqslkfd jqksld fjksqldf jldsk fjsqdlkf."
+        cell.nameLabel.text = characterItems[indexPath.row].name
+        cell.bioLabel.text = characterItems[indexPath.row].text
+        cell.motiefLabel.text = characterItems[indexPath.row].motief
+        cell.vraag1Label.text = characterItems[indexPath.row].vraag1
+        cell.vraag2Label.text = characterItems[indexPath.row].vraag2
+        cell.vraag3Label.text = characterItems[indexPath.row].vraag3
         
         return cell
     }

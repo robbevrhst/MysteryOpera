@@ -603,7 +603,7 @@
             <objects>
                 <viewController id="7FI-eP-7vo" customClass="MapViewController" customModule="MysteryOpera" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mbs-hM-U2n">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="718"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcq-5v-so7">
@@ -622,7 +622,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="z0l-J3-n5W"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Plattegrond" id="OyR-Fm-f1k"/>
+                    <tabBarItem key="tabBarItem" title="Plattegrond" image="map-icon-0" selectedImage="map-icon-1" id="OyR-Fm-f1k"/>
                     <connections>
                         <outlet property="profileButton" destination="bcq-5v-so7" id="fFq-yM-Tit"/>
                     </connections>
@@ -636,12 +636,15 @@
             <objects>
                 <viewController id="cOj-MR-6F6" customClass="VerdachtenViewController" customModule="MysteryOpera" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hbc-uD-SzX" userLabel="carouselView">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="718"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-without-door" translatesAutoresizingMaskIntoConstraints="NO" id="ynA-wE-NOt">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="718"/>
+                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dfP-FG-Uw5">
-                                <rect key="frame" x="0.0" y="70" width="1024" height="548"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="50" width="1024" height="628"/>
+                                <color key="backgroundColor" red="0.0" green="0.033348509353823635" blue="0.25408440828323364" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pCO-Uc-RdA">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -662,14 +665,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="bNk-DN-SPF" firstAttribute="bottom" secondItem="dfP-FG-Uw5" secondAttribute="bottom" constant="100" id="5mt-OR-MnE"/>
+                            <constraint firstItem="ynA-wE-NOt" firstAttribute="leading" secondItem="bNk-DN-SPF" secondAttribute="leading" id="36T-0f-iWg"/>
+                            <constraint firstItem="bNk-DN-SPF" firstAttribute="bottom" secondItem="dfP-FG-Uw5" secondAttribute="bottom" constant="40" id="5mt-OR-MnE"/>
                             <constraint firstItem="dfP-FG-Uw5" firstAttribute="leading" secondItem="bNk-DN-SPF" secondAttribute="leading" id="CYh-iO-4Rp"/>
+                            <constraint firstItem="bNk-DN-SPF" firstAttribute="bottom" secondItem="ynA-wE-NOt" secondAttribute="bottom" id="N2S-fU-IlM"/>
+                            <constraint firstItem="ynA-wE-NOt" firstAttribute="top" secondItem="hbc-uD-SzX" secondAttribute="top" id="Wdw-dP-2Yo"/>
                             <constraint firstItem="bNk-DN-SPF" firstAttribute="trailing" secondItem="dfP-FG-Uw5" secondAttribute="trailing" id="hgj-GO-8i0"/>
-                            <constraint firstItem="dfP-FG-Uw5" firstAttribute="top" secondItem="bNk-DN-SPF" secondAttribute="top" constant="50" id="nTm-lu-pmj"/>
+                            <constraint firstItem="dfP-FG-Uw5" firstAttribute="top" secondItem="bNk-DN-SPF" secondAttribute="top" constant="30" id="nTm-lu-pmj"/>
+                            <constraint firstItem="bNk-DN-SPF" firstAttribute="trailing" secondItem="ynA-wE-NOt" secondAttribute="trailing" id="p3c-mI-DRv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bNk-DN-SPF"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Verdachten" id="r7S-aH-okv"/>
+                    <tabBarItem key="tabBarItem" title="Verdachten" image="suspect-icon-0" selectedImage="suspect-icon-1" id="r7S-aH-okv"/>
                     <connections>
                         <outlet property="carouselCollectionView" destination="dfP-FG-Uw5" id="bG3-pu-pGz"/>
                     </connections>
@@ -683,7 +690,7 @@
             <objects>
                 <viewController id="seQ-FS-rsv" customClass="CluesViewController" customModule="MysteryOpera" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ivu-d7-JrP">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="718"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="87k-qh-sZP">
@@ -807,7 +814,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TPU-i2-GOR"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Aanwijzingen" id="Qvm-jQ-fFF"/>
+                    <tabBarItem key="tabBarItem" title="Aanwijzingen" image="clues-icon-0" selectedImage="clues-icon-1" id="Qvm-jQ-fFF"/>
                     <connections>
                         <outlet property="clueImage" destination="07F-F2-aOa" id="MYV-Bx-vSc"/>
                         <outlet property="clueImage2" destination="ECI-0A-9sd" id="SFX-Cz-l4v"/>
@@ -822,10 +829,12 @@
         <scene sceneID="gKL-vt-40S">
             <objects>
                 <tabBarController id="7XE-xn-xts" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yxg-BU-HJ5">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Yxg-BU-HJ5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.792156862745098" green="0.61960784313725492" blue="0.40392156862745099" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="seQ-FS-rsv" kind="relationship" relationship="viewControllers" id="mjP-76-ERo"/>
@@ -842,10 +851,14 @@
         <image name="bg-official" width="1024" height="768"/>
         <image name="bg-without-door" width="1024" height="768"/>
         <image name="brief" width="600" height="598"/>
+        <image name="clues-icon-0" width="24.666666030883789" height="25.333333969116211"/>
+        <image name="clues-icon-1" width="24.666666030883789" height="25.333333969116211"/>
         <image name="kingsdead" width="1024" height="422"/>
         <image name="koning" width="94.333335876464844" height="162.33332824707031"/>
         <image name="lock" width="900" height="900"/>
         <image name="logo" width="326" height="238"/>
+        <image name="map-icon-0" width="25.333333969116211" height="25.333333969116211"/>
+        <image name="map-icon-1" width="25.333333969116211" height="25.333333969116211"/>
         <image name="personage1" width="260" height="260"/>
         <image name="personage2" width="260" height="260"/>
         <image name="personage3" width="260" height="260"/>
@@ -856,6 +869,8 @@
         <image name="personage8" width="260" height="260"/>
         <image name="playButton" width="82" height="83"/>
         <image name="plusButton" width="56" height="57"/>
+        <image name="suspect-icon-0" width="23.666666030883789" height="25.333333969116211"/>
+        <image name="suspect-icon-1" width="23.666666030883789" height="25.333333969116211"/>
         <image name="verdachten" width="1024" height="502"/>
     </resources>
 </document>

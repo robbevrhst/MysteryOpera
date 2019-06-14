@@ -10,10 +10,9 @@ import Foundation
 
 struct CharacterItem {
     var name:String
-//    var img:String
     var text:String
     var motief:String
-//    var vraag1:String
-//    var vraag2:String
-//    var vraag3:String
+    var vraag1:String
+    var vraag2:String
+    var vraag3:String
 }
