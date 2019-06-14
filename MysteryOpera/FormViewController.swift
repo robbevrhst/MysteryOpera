@@ -67,7 +67,7 @@ class FormViewController: UIViewController {
         if playerOneTextField.text?.isEmpty ?? true {
             print("textfield empty")
         } else {
-            performSegue(withIdentifier: "test", sender: nil)
+            performSegue(withIdentifier: "goToCharacterSelect", sender: nil)
         }
     }
 

@@ -29,11 +29,6 @@ class CluesViewController: UIViewController, AVCaptureMetadataOutputObjectsDeleg
             print("Failed to scan QR Code")
         }
         
-//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-//        clueImage.isUserInteractionEnabled = true
-//        clueImage.addGestureRecognizer(tapGestureRecognizer)
-//        clueImage2.isUserInteractionEnabled = true
-//        clueImage2.addGestureRecognizer(tapGestureRecognizer)
     }
     
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
@@ -43,9 +38,9 @@ class CluesViewController: UIViewController, AVCaptureMetadataOutputObjectsDeleg
                 print(macReadCode.stringValue!)
                 
                 if macReadCode.stringValue! == "Glas" {
-                    clueImage.image = UIImage(named: "personage1")
+                    clueImage.image = UIImage(named: "mes-round")
                 } else if macReadCode.stringValue! == "stof" {
-                    clueImage2.image = UIImage(named: "personage2")
+                    clueImage2.image = UIImage(named: "geweer-round")
                 } else {
                     let alert = UIAlertController(title: "Dit is geen aanwijzing!", message: "", preferredStyle: .alert)
                     let action = UIAlertAction(title: "Opnieuw", style: .default, handler: nil)
@@ -85,14 +80,5 @@ class CluesViewController: UIViewController, AVCaptureMetadataOutputObjectsDeleg
         
         avCaptureSession.startRunning()
     }
-    
-//    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-//        let tappedImage = tapGestureRecognizer.view as! UIImageView
-//        // And some actions
-//        let alert = UIAlertController(title: "CLUE", message: "", preferredStyle: .alert)
-//        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-//        alert.addAction(action)
-//        present(alert, animated: true, completion: nil)
-//    }
 
 }

@@ -9,13 +9,8 @@
 import UIKit
 
 class MapViewController: UIViewController {
-
-    @IBOutlet weak var profileButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        profileButton.layer.cornerRadius = 0.5 * profileButton.bounds.size.width
-        profileButton.clipsToBounds = true
     }
 }

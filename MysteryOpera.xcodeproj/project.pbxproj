@@ -11,6 +11,7 @@
 		59317C0A22B28C3C00A66A83 /* InvitationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59317C0922B28C3C00A66A83 /* InvitationViewController.swift */; };
 		594AEF3922B18F530090A1C7 /* CluesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594AEF3822B18F530090A1C7 /* CluesViewController.swift */; };
 		594E1E9B22B2E213002FDF20 /* CharacterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594E1E9A22B2E213002FDF20 /* CharacterItem.swift */; };
+		596493C822B373B300AE0C69 /* SolutionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596493C722B373B300AE0C69 /* SolutionViewController.swift */; };
 		596AF0DE22B1017200BA6524 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596AF0DD22B1017200BA6524 /* CharacterViewController.swift */; };
 		596AF0E022B10FD900BA6524 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596AF0DF22B10FD900BA6524 /* MapViewController.swift */; };
 		596B140F22B1BC4000EACE45 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 596B140322B1BC3E00EACE45 /* Roboto-BoldItalic.ttf */; };
@@ -44,6 +45,7 @@
 		59317C0922B28C3C00A66A83 /* InvitationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationViewController.swift; sourceTree = "<group>"; };
 		594AEF3822B18F530090A1C7 /* CluesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CluesViewController.swift; sourceTree = "<group>"; };
 		594E1E9A22B2E213002FDF20 /* CharacterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterItem.swift; sourceTree = "<group>"; };
+		596493C722B373B300AE0C69 /* SolutionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolutionViewController.swift; sourceTree = "<group>"; };
 		596AF0DD22B1017200BA6524 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		596AF0DF22B10FD900BA6524 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		596B140322B1BC3E00EACE45 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				59C58C6022B065F400931884 /* VerdachtenViewController.swift */,
 				5982BE6D22B13846002E864F /* CarouselCollectionViewCell.swift */,
 				5982BE6E22B13846002E864F /* CarouselCollectionViewCell.xib */,
+				596493C722B373B300AE0C69 /* SolutionViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				596AF0E022B10FD900BA6524 /* MapViewController.swift in Sources */,
 				596AF0DE22B1017200BA6524 /* CharacterViewController.swift in Sources */,
 				59B574B722AD8B6900DC1BB4 /* ViewController.swift in Sources */,
+				596493C822B373B300AE0C69 /* SolutionViewController.swift in Sources */,
 				59B574B522AD8B6900DC1BB4 /* AppDelegate.swift in Sources */,
 				590B0EB522AEBEA20058798C /* StartGameViewController.swift in Sources */,
 				594AEF3922B18F530090A1C7 /* CluesViewController.swift in Sources */,
