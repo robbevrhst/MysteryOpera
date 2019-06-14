@@ -15,6 +15,9 @@ class VerdachtenViewController: UIViewController, UICollectionViewDelegate, UICo
     
     @IBOutlet weak var carouselCollectionView: UICollectionView!
     
+    @IBOutlet weak var segmentControl: UISegmentedControl!
+    
+    
     let path:String = "http://www.thrillstudio.be/admin/index.php?page=detail&id=1&accept=json"
     var characterItems = [CharacterItem]()
     
@@ -78,6 +81,18 @@ class VerdachtenViewController: UIViewController, UICollectionViewDelegate, UICo
         cell.vraag3Label.text = characterItems[indexPath.row].vraag3
         
         return cell
+    }
+    
+    @IBAction func indexChanged(_ sender: UISegmentedControl) {
+        switch segmentControl.selectedSegmentIndex {
+        case 0:
+            print("verdachten")
+            carouselCollectionView.isHidden = false
+        case 1:
+            carouselCollectionView.isHidden = true
+        default:
+            break
+        }
     }
     
 }
