@@ -19,19 +19,32 @@ class CarouselCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var vraag2Label: UILabel!
     @IBOutlet weak var vraag3Label: UILabel!
     
+    @IBOutlet weak var button1: UIButton!
+    @IBOutlet weak var button2: UIButton!
+    @IBOutlet weak var button3: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         DispatchQueue.main.async {
             self.carView.layer.opacity = 0.9
             self.carView.layer.cornerRadius = 7
-//            self.carView.layer.shadowColor = UIColor.gray.cgColor
-//            self.carView.layer.shadowOpacity = 0.5
-//            self.carView.layer.shadowOpacity = 10.0
-//            self.carView.layer.shadowOffset = .zero
-//            self.carView.layer.shadowPath = UIBezierPath(rect: self.carView.bounds).cgPath
-//            self.carView.layer.shouldRasterize = true
         }
     }
 
+    @IBAction func button1Pressed(_ sender: UIButton) {
+        let checkedImage = UIImage(named: "checked")! as UIImage
+        button1.setImage(checkedImage, for: .normal)
+    }
+    
+    @IBAction func button2Pressed(_ sender: UIButton) {
+        let checkedImage = UIImage(named: "checked")! as UIImage
+        button2.setImage(checkedImage, for: .normal)
+    }
+    
+    @IBAction func button3Pressed(_ sender: UIButton) {
+        let checkedImage = UIImage(named: "checked")! as UIImage
+        button3.setImage(checkedImage, for: .normal)
+    }
+    
 }

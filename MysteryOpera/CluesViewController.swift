@@ -39,8 +39,16 @@ class CluesViewController: UIViewController, AVCaptureMetadataOutputObjectsDeleg
                 
                 if macReadCode.stringValue! == "Glas" {
                     clueImage.image = UIImage(named: "mes-round")
+                    let alert = UIAlertController(title: "\(macReadCode.stringValue!) ontdekt!", message: "", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "YES!", style: .default, handler: nil)
+                    alert.addAction(action)
+                    present(alert, animated: true, completion: nil)
                 } else if macReadCode.stringValue! == "stof" {
                     clueImage2.image = UIImage(named: "geweer-round")
+                    let alert = UIAlertController(title: "\(macReadCode.stringValue!) ontdekt!", message: "", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "YES!", style: .default, handler: nil)
+                    alert.addAction(action)
+                    present(alert, animated: true, completion: nil)
                 } else {
                     let alert = UIAlertController(title: "Dit is geen aanwijzing!", message: "", preferredStyle: .alert)
                     let action = UIAlertAction(title: "Opnieuw", style: .default, handler: nil)

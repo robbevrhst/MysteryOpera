@@ -1062,13 +1062,11 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXh-Lt-Rhy">
-                                <rect key="frame" x="739" y="662" width="255" height="71"/>
-                                <color key="backgroundColor" red="0.61176470589999998" green="0.47058823529999999" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="384.5" y="662" width="255" height="71"/>
+                                <color key="backgroundColor" cyan="0.0" magenta="0.70588237050000002" yellow="0.64313727620000005" black="0.71314991510000003" alpha="1" colorSpace="custom" customColorSpace="deviceCMYK"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="255" id="OpA-t4-HjB"/>
                                     <constraint firstAttribute="height" constant="71" id="Pjy-SC-Pq5"/>
                                     <constraint firstAttribute="width" constant="255" id="Yzm-Um-OMR"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="71" id="kwi-bE-mZT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Lobster1.4" family="Lobster 1.4" pointSize="24"/>
                                 <state key="normal" title="Bekijk Leaderboard"/>
@@ -1088,11 +1086,11 @@
                             <constraint firstItem="UbH-sS-jdo" firstAttribute="top" secondItem="ldU-Ee-Z2D" secondAttribute="top" id="1dh-px-loz"/>
                             <constraint firstItem="UbH-sS-jdo" firstAttribute="leading" secondItem="39W-nL-qY4" secondAttribute="leading" id="2Bl-Rz-FRf"/>
                             <constraint firstItem="RaX-yK-bxA" firstAttribute="leading" secondItem="39W-nL-qY4" secondAttribute="leading" constant="287" id="9PC-2H-L1h"/>
-                            <constraint firstItem="39W-nL-qY4" firstAttribute="trailing" secondItem="XXh-Lt-Rhy" secondAttribute="trailing" constant="30" id="Zpe-lI-9Qu"/>
+                            <constraint firstItem="39W-nL-qY4" firstAttribute="bottom" secondItem="XXh-Lt-Rhy" secondAttribute="bottom" constant="35" id="Xqf-7M-DfI"/>
+                            <constraint firstItem="XXh-Lt-Rhy" firstAttribute="centerX" secondItem="ldU-Ee-Z2D" secondAttribute="centerX" id="aPh-Iw-KTa"/>
                             <constraint firstItem="UbH-sS-jdo" firstAttribute="bottom" secondItem="39W-nL-qY4" secondAttribute="bottom" id="kbk-4z-uPc"/>
                             <constraint firstItem="iYQ-SR-akH" firstAttribute="centerX" secondItem="ldU-Ee-Z2D" secondAttribute="centerX" id="o04-tH-Hcl"/>
                             <constraint firstItem="UbH-sS-jdo" firstAttribute="trailing" secondItem="39W-nL-qY4" secondAttribute="trailing" id="ocr-gk-JMu"/>
-                            <constraint firstItem="39W-nL-qY4" firstAttribute="bottom" secondItem="XXh-Lt-Rhy" secondAttribute="bottom" constant="35" id="vGj-6Z-pAg"/>
                             <constraint firstItem="RaX-yK-bxA" firstAttribute="centerY" secondItem="ldU-Ee-Z2D" secondAttribute="centerY" id="wcu-Rp-6Kp"/>
                             <constraint firstItem="T3E-B3-r3x" firstAttribute="centerX" secondItem="ldU-Ee-Z2D" secondAttribute="centerX" id="x6V-Nw-Ack"/>
                             <constraint firstItem="39W-nL-qY4" firstAttribute="bottom" secondItem="T3E-B3-r3x" secondAttribute="bottom" constant="170" id="xON-Gm-5kc"/>

@@ -138,12 +138,16 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMb-Ey-tJo">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMb-Ey-tJo">
                                         <rect key="frame" x="8" y="2" width="22" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="AeF-wn-tPs"/>
                                             <constraint firstAttribute="width" constant="22" id="NcF-60-07c"/>
                                         </constraints>
+                                        <state key="normal" image="unchecked"/>
+                                        <connections>
+                                            <action selector="button1Pressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="jNy-0t-qB6"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -168,12 +172,16 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPd-Ho-bGI">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPd-Ho-bGI">
                                         <rect key="frame" x="8" y="2" width="22" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="22" id="4nQ-D9-2rV"/>
                                             <constraint firstAttribute="height" constant="22" id="Dde-Lw-ljR"/>
                                         </constraints>
+                                        <state key="normal" image="unchecked"/>
+                                        <connections>
+                                            <action selector="button2Pressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="ypO-id-eGO"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -198,12 +206,16 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cX-y0-5q9">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cX-y0-5q9">
                                         <rect key="frame" x="8" y="2" width="22" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="22" id="Bal-wn-1RN"/>
                                             <constraint firstAttribute="height" constant="22" id="X8S-Hf-hti"/>
                                         </constraints>
+                                        <state key="normal" image="unchecked"/>
+                                        <connections>
+                                            <action selector="button3Pressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Q5W-pg-YYN"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -249,6 +261,9 @@
             <size key="customSize" width="773" height="575"/>
             <connections>
                 <outlet property="bioLabel" destination="rBx-CM-cRn" id="Bpt-AB-l8g"/>
+                <outlet property="button1" destination="RMb-Ey-tJo" id="ZQg-hm-rcC"/>
+                <outlet property="button2" destination="FPd-Ho-bGI" id="h7R-gw-BWg"/>
+                <outlet property="button3" destination="9cX-y0-5q9" id="80F-fy-HqK"/>
                 <outlet property="carImage" destination="5KG-Wa-Uua" id="Heq-dv-C0K"/>
                 <outlet property="carView" destination="yrZ-L4-nhi" id="n81-ES-ZuK"/>
                 <outlet property="motiefLabel" destination="WgZ-S2-es4" id="Sjv-Jc-nhl"/>
@@ -264,5 +279,6 @@
         <image name="divider" width="784" height="71"/>
         <image name="left" width="28" height="42"/>
         <image name="right" width="28" height="42"/>
+        <image name="unchecked" width="70" height="70"/>
     </resources>
 </document>
