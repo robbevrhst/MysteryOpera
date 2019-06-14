@@ -24,6 +24,7 @@ class CarouselCollectionViewCell: UICollectionViewCell {
         
         DispatchQueue.main.async {
             self.carView.layer.opacity = 0.9
+            self.carView.layer.cornerRadius = 7
 //            self.carView.layer.shadowColor = UIColor.gray.cgColor
 //            self.carView.layer.shadowOpacity = 0.5
 //            self.carView.layer.shadowOpacity = 10.0
